@@ -7,7 +7,7 @@
 	  	<meta name="description" content="">
 	  	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	  	<meta name="generator" content="Jekyll v3.8.5">
-	  	<title>Hadi Foroozanfar</title>
+	  	<title>Product Hunt</title>
 
 
 	  	<!-- Bootstrap core CSS -->
@@ -47,14 +47,15 @@
 					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 						<div class="navbar-nav ml-auto">
 							{% if user.is_authenticated %}
-								<a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}">logout</a>
-								<form id='logout' method="POST" action="{% url 'logout' %}">
-									{% csrf_token %}
-									<input type="hidden" />
-								</form>
+							<a class="nav-item nav-link" href="{% url 'create' %}"><img src="{% static 'plus.png' %}" height="25" width="25"></a>
+							<a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}">logout</a>
+							<form id='logout' method="POST" action="{% url 'logout' %}">
+								{% csrf_token %}
+								<input type="hidden" />
+							</form>
 							{% else %}
-								<a class="nav-item nav-link active" href="{% url 'signup' %}">Sign Up</a>
-								<a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+							<a class="nav-item nav-link active" href="{% url 'signup' %}">Sign Up</a>
+							<a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
 							{% endif %}
 						</div>
 					</div>	
